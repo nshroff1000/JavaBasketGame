@@ -1,17 +1,6 @@
-=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
-CIS 120 Game Project README
-PennKey: nshroff1
-=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
-
-
-
 ===================
 =: Core Concepts :=
 ===================
-
-- List the four core concepts, the features they implement, and why each feature
-  is an approprate use of the concept. Incorporate the feedback you got after
-  submitting your proposal.
 
   1. Collections (Specifically ArrayList): Originally I was going to use Collections for a different purpose, 
   however, when I began implementing my game, I realized that I needed to find a way to maintain a list of all
@@ -49,12 +38,9 @@ PennKey: nshroff1
 
 
 =========================
-=: Your Implementation :=
+=: Overview of Classes :=
 =========================
 
-- Provide an overview of each of the classes in your code, and what their
-  function is in the overall game.
-  
   Game.java: This class handles a lot of the basic graphics for my game. It initiates my GameCourt,
   creates a button for start/reset game, creates a button for the instructions (it also creates the JPanel 
   for the instructions), and the labels for the score and time left.
@@ -100,23 +86,3 @@ PennKey: nshroff1
 
   GameTest.java: Provides all the JUnit tests for my game. Primarily used to test the ability() methods for each
   of the balls.
-
-- Were there any significant stumbling blocks while you were implementing your
-  game (related to your design, or otherwise)?
-  Yeah, at first, I did not consider what happened when there were multiple balls on the screen.
-  However, I realized that my game had to have multiple balls on the screen so I needed a way to store all the balls
-  on the screen to constantly move them and keep checking to see if the ball missed/intersected the basket. This
-  problem was solved by using a Collection.
-
-- Evaluate your design. Is there a good separation of functionality? How well is
-  private state encapsulated? What would you refactor, if given the chance?
-  I think my design makes sense because I have an abstract class for a Ball and a separate class for a Basket. 
-  Both of these extend GameObject which makes sense since both of these are objects within the GameCourt. In addition,
-  I think it makes sense that each of the types of balls are different classes extending Ball.java
-  since they have very different implementations for the ability method. If I had the chance, maybe I would
-  consider finding a better way to change the basket velocity, because currently, the basket class changes the
-  velocity by changing the velocity field in the GameCourt class. However, I think overall my design makes a lot of
-  sense.
-
-
-
